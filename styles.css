@@ -1,0 +1,362 @@
+/* Intro Animation */
+@keyframes bgintro {
+    0% {
+        background-color: #292846;
+        color: #292846;
+        z-index: 10;
+        pointer-events: auto;
+    }
+    90% {
+        background-color: #C6C6C6;
+        color: #292846;
+        opacity: 1;
+        z-index: 10;
+        pointer-events: auto;
+    }
+    100% {
+        background-color: #C6C6C6;
+        opacity: 0;
+        z-index: -1;
+        pointer-events: none;
+    }
+}
+
+
+/* Intro styling */
+#intro {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    animation: bgintro 3s forwards;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Global */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #292846;
+  font-family: monospace;
+  
+}
+
+.wrap{
+  overflow-x: clip;
+}
+
+/* Hero / Header Card */
+.cardname {
+  width: 100%;
+  height: 90svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+}
+
+.bussinesscard {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.profilepic {
+  height: 150px;
+  width: auto;
+  border-radius: 6px;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  height: 10svh;
+  min-height: 50px;
+  background-color: darkgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  
+}
+
+/* Nav links group */
+.nav-links {
+  display: flex;
+  gap: 10px;
+
+}
+
+/* Normal nav buttons */
+.button {
+  padding: 0 40px;
+  font-size: 22px;
+  text-decoration: none;
+  color: #292846;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100px;
+  text-align: center;
+  justify-content: center;
+
+
+}
+
+
+
+/* Hamburger (Hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #292846;
+  user-select: none;
+  padding-left: 50%;
+  padding-right: 50%;
+}
+
+
+/* Content */
+.content {
+  width: 100%;
+  color: black;
+}
+
+/* Pages */
+.page {
+  display: none;
+  padding: 30px;
+  min-height: 90svh;
+  background: lightgray;
+  color: black;
+}
+
+/* Visible page */
+.page.active {
+  display: block;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  height: 10svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 3vh;
+  right: 3vh;
+  width: 9vh;
+  height: 9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 1.2vh;
+  background: rgba(255, 255, 255, 0.85);
+  color: black;
+  font-size: 50px;
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 9;
+}
+
+.page{
+  text-align: center;
+
+}
+
+.ctitle{
+  font-size: 40px;
+
+  margin-top: 8vh;
+}
+
+.csubtitle{
+  font-size: auto;
+  margin-top: 80px;
+  font-style: oblique bold;
+
+}
+
+.contactname{
+  font-size: 20px;
+  margin-top:30px;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ------------ MOBILE RESPONSIVE ADJUSTMENTS ------------ */
+@media (max-width: 700px) {
+
+
+
+  /* Show hamburger, collapse links */
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    width: 100%;
+    background-color: darkgray;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 9;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .button {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+  }
+
+  .page {
+    padding: 20px;
+  }
+
+  #backToTop {
+    width: 7vh;
+    height: 7vh;
+    font-size: 40px;
+  }
+}
+
+
+
+
+
+
+
+/* From Uiverse.io by cssbuttons-io */ 
+.fancy {
+ background-color: transparent;
+ border: 2px solid #292846;
+ border-radius: 0;
+ box-sizing: border-box;
+
+ cursor: pointer;
+ display: inline-block;
+
+ font-weight: 700;
+ letter-spacing: 0.05em;
+ margin: 0;
+ outline: none;
+ overflow: visible;
+ padding: 1.25em 2em;
+ position: relative;
+ text-align: center;
+ text-decoration: none;
+ text-transform: none;
+ transition: all 0.3s ease-in-out;
+ user-select: none;
+ font-size: 13px;
+}
+
+.fancy::before {
+ content: " ";
+ width: 1.5625rem;
+ height: 2px;
+ background: #292846;
+ top: 50%;
+ left: 1.5em;
+ position: absolute;
+ transform: translateY(-50%);
+ transform-origin: center;
+ transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy .text {
+ font-size: 1.125em;
+ line-height: 1.33333em;
+ padding-left: 2em;
+ display: block;
+ text-align: left;
+ transition: all 0.3s ease-in-out;
+ text-transform: uppercase;
+ text-decoration: none;
+ color: #292846;
+}
+
+.fancy .top-key {
+ height: 2px;
+ width: 1.5625rem;
+ top: -2px;
+ left: 0.625rem;
+ position: absolute;
+ background: lightgray;
+ transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy .bottom-key-1 {
+ height: 2px;
+ width: 1.5625rem;
+ right: 1.875rem;
+ bottom: -2px;
+ position: absolute;
+ background: lightgray;
+ transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy .bottom-key-2 {
+ height: 2px;
+ width: 0.625rem;
+ right: 0.625rem;
+ bottom: -2px;
+ position: absolute;
+ background: lightgray;
+ transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy:hover {
+ color: white;
+ background: #292846;
+}
+
+.fancy:hover::before {
+ width: 0.9375rem;
+ background: white;
+}
+
+.fancy:hover .text {
+ color: white;
+ padding-left: 1.5em;
+}
+
+.fancy:hover .top-key {
+ left: -2px;
+ width: 0px;
+}
+
+.fancy:hover .bottom-key-1,
+ .fancy:hover .bottom-key-2 {
+ right: 0;
+ width: 0;
+}
