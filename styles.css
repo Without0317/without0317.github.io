@@ -85,6 +85,7 @@ html, body {
   position: sticky;
   top: 0;
   z-index: 9;
+  box-shadow: #292846;
   
 }
 
@@ -190,14 +191,13 @@ html, body {
 
 .csubtitle{
   font-size: auto;
-  margin-top: 80px;
+  margin-top: 50px;
   font-style: oblique bold;
 
 }
 
 .contactname{
   font-size: 20px;
-  margin-top:30px;
 }
 
 #backToTop.show {
@@ -278,6 +278,7 @@ html, body {
  transition: all 0.3s ease-in-out;
  user-select: none;
  font-size: 13px;
+ margin-bottom: 20px ;
 }
 
 .fancy::before {
