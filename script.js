@@ -1,11 +1,18 @@
 function showPage() {
-  const hash = window.location.hash || "#home";
+  const hash = window.location.hash || "#about";
   document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
   const activePage = document.querySelector(hash);
+
   if (activePage) activePage.classList.add("active");
+      activePage.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   document.querySelector(".nav-links").classList.toggle("hidden");
 
 }
+
+
 
 window.addEventListener("load", showPage);
 window.addEventListener("hashchange", showPage);
@@ -37,7 +44,7 @@ btn.addEventListener("click", () => {
 
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("show");
-
+//scroll to top of active page
   const activePage = document.querySelector(".page.active");
   if (activePage) {
     activePage.scrollIntoView({
