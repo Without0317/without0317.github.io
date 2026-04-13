@@ -1,3 +1,13 @@
+window.addEventListener("load", showPage);
+window.addEventListener("load", () => {
+  const card = document.querySelector(".cardname");
+  window.scrollTo({
+    top: card.offsetTop,
+    behavior: "smooth"
+  });
+});
+window.addEventListener("hashchange", showPage);
+
 function showPage() {
   const hash = window.location.hash || "#about";
   document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
@@ -8,14 +18,12 @@ function showPage() {
       behavior: "smooth",
       block: "start"
     });
+  
   document.querySelector(".nav-links").classList.toggle("hidden");
 
 }
 
 
-
-window.addEventListener("load", showPage);
-window.addEventListener("hashchange", showPage);
 
 const btn = document.getElementById("backToTop");
 
@@ -25,10 +33,6 @@ window.addEventListener("scroll", () => {
   } else {
     btn.classList.remove("show");
   }
-});
-
-btn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 
